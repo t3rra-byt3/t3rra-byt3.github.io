@@ -62,5 +62,8 @@ output: html_document
     <li>
       <a href="Chapters/Chapter1.html">Chapter 1</a>
     </li>
+    <li>
+      <a href="Chapters/RmdShortcuts.html">Keyboard Shortcuts</a>
+    </li>
   </ul>
 </div>

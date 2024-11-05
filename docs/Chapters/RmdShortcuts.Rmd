@@ -1,0 +1,91 @@
+---
+title: "STAT 311 Reference Sheet: R Studio Keyboard Shortcuts"
+output: html_document
+---
+
+<style>
+
+        
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+        }
+        
+        h4 {
+            color: #4B2D83;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        
+        h5 {
+            justify-content: center;
+            text-align: center;
+        }
+}
+
+    </style>
+
+<div>
+
+  <h3>
+    Save Document
+  </h3>
+  <h5>
+    Ctrl + S (Windows) <br>
+    Command + S (Mac)
+  </h5>
+  
+  <h3>
+    Run Line in Chunk
+  </h3>
+  <h5>
+    Ctrl + Enter (Windows) <br>
+    Command + Enter (Mac)
+  </h5>
+  
+  <h3>
+    Run Entire Code Chunk
+  </h3>
+  <h5>
+    Ctrl + Shift + Enter (Windows) <br>
+    Command + Shift + enter (Mac) 
+  </h5>
+  
+  <h3>
+    Search Help for Item (Step Into)
+  </h3>
+  <h5>
+   F1 key <br>
+   (Or fn key + F1 key if keybinds are swapped)
+  
+  </h5>
+  
+  <h3>
+    Quick Insert Code Chunk in 
+  </h3>
+  <h5>
+    Ctrl + Alt + I (Windows) <br>
+    Command + Option + I (Mac)
+  </h5>
+  
+  <h3>
+    Knit Entire Document
+  </h3>
+  <h5>
+    Ctrl + Shift + K (Windows) <br>
+    Cmd + Shift + K (Mac)
+  </h5>
+  <br>
+  <h7>
+    <i>Basic Shortcuts you will use most often. More shortcuts can be viewed
+    in the keyboard shortcuts menu in ```Tools -> Keyboard Shortcuts Help``` or
+    press ```Alt + Shift + K (Windows) / Option + Shift + K (Mac)``` </i>
+    ```{r echo=FALSE}
+        knitr::include_graphics("../Images/KeyboardShortcuts.png")
+    ```
+  </h7>
+  
+  
+</div>
+
