@@ -2,66 +2,54 @@
 title: "STAT 311 Reference Sheet Chapter 1"
 output: html_document
 ---
+<style>
 
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+        }
+        
+        h4 {
+            color: #4B2D83;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+    </style>
 
 <div>  
-  <ul>
-    <li>
-      <h3 style="color: orange"> Help Function </h3>
-      <h4>&emsp; Syntax </h4>
-      <p> 
-         &emsp;  &emsp;```??<object>```, where ```<object>```
-        is the thing you want to learn more about. Type this in the <b>Console.</b>
-      </p>
-      <h4>&emsp; Usage</h4>
-      <p>
-        &emsp;&emsp; RStudio will open the <b>Viewer</b> window, displaying 
-        information related to the <i>object</i> of interest.
-      </p>
-      <h4> &emsp; Output </h4>
-      <p>
-        &emsp; &emsp; A <b>Viewer</b> with information.
-    </li>
-    
-    <li>
-      <h3 style="color: orange"> Glimpse Function </h3>
-      <h4> &emsp; Syntax </h4>
-      <p>
-        &emsp;  &emsp; ```glimpse( <object> )```
-      </p>
-      
-      <h4>  &emsp; Usage </h4>
-      <p>
-        &emsp; &emsp; RStudio will output a short excerpt of data. <br>
-        &emsp; &emsp; This data will contain row, and column information, along            with a few valid rows.
-      </p>
-      <h4> &emsp; Output </h4>
-      <p>
-        &emsp; &emsp; A tibble of data; by default into the console<br>
-      </p>
-    </li>
-    
-    
-  </ul>
+  <h3> Help Function </h3>
+  <h4>&emsp; Syntax </h4>
+  <p> 
+     &emsp;  &emsp;```??<object>```, where ```<object>```
+    is the thing you want to learn more about. Type this in the <b>Console.</b>
+  </p>
+  <h4>&emsp; Usage</h4>
+  <p>
+    &emsp;&emsp; RStudio will open the <b>Viewer</b> window, displaying 
+    information related to the <i>object</i> of interest.
+  </p>
+  <h4> &emsp; Output </h4>
+  <p>
+    &emsp; &emsp; A <b>Viewer</b> with information.
 
-
-</div>
-
-<div>
-  <h1> Other Help</h1>
-  <h3>&emsp; How do I create a new subfolder in RStudio? </h3>
-  <h4> &emsp; &emsp; Press the "New Folder" Icon.
-  ```{r echo=FALSE}
-    knitr::include_graphics("../Images/Chapter1Folder.png")
-  ```
-  </h4>
+  <h3> Glimpse Function </h3>
+  <h4> &emsp; Syntax </h4>
+  <p>
+    &emsp;  &emsp; ```glimpse( <object> )```
+  </p>
   
-  <h3> &emsp; How do I copy to a directory? </h3>
-  <h4> &emsp; &emsp; A directory, or subfolder, can be created using the above method.
-  When copying, press the square select icon next to the file, then press the <b>More</b>
-  ```{r echo=FALSE}
-  knitr::include_graphics("../Images/Chapter1More.png")
-  ```
-  Icon, and select <b>Copy To</b>, then navigate to the desired directory.
-</div>
+  <h4>  &emsp; Usage </h4>
+  <p>
+    &emsp; &emsp; RStudio will output a short excerpt of data. <br>
+    &emsp; &emsp; This data will contain row, and column information, along            with a few valid rows.
+  </p>
+  <h4> &emsp; Output </h4>
+  <p>
+    &emsp; &emsp; A tibble of data; by default into the console<br>
+  </p>
 
+
+
+</div>

@@ -11,7 +11,7 @@
 
 
 
-<title>STAT 311 Reference Sheet Chapter 1</title>
+<title>STAT 311 Reference Sheet: Introduction to Rmd</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,69 +348,196 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">STAT 311 Reference Sheet Chapter 1</h1>
+<h1 class="title toc-ignore">STAT 311 Reference Sheet: Introduction to
+Rmd</h1>
 
 </div>
 
 
 <style>
 
-h3 {
-color: orange;
+table {
+width: 50%; 
+border-collapse: collapse;
+margin: 20px auto;
+font-family: Arial, sans-serif;
 text-align: center;
-}
-h4 {
-color: #4B2D83;
-font-weight: bold;
-margin-left: 20px;
-}
-</style>
+<!--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);-->
+        }
+
+        /* Header Styling */
+        th {
+            background-color: #4B2D83;
+            color: white;
+            padding: 12px;
+            font-size: 1.1em;
+        }
+
+        /* Cell Styling */
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        /* Row Alternating Color */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+        }
+        
+        h4 {
+            color: #4B2D83;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+    </style>
 <div>
 <h3>
-Help Function
+Basic R Commands
 </h3>
-<h4>
-  Syntax
-</h4>
-<p>
-   <code>??&lt;object&gt;</code>, where <code>&lt;object&gt;</code> is
-the thing you want to learn more about. Type this in the <b>Console.</b>
-</p>
-<h4>
-  Usage
-</h4>
-<p>
-   RStudio will open the <b>Viewer</b> window, displaying information
-related to the <i>object</i> of interest.
-</p>
-<h4>
-  Output
-</h4>
-<p>
-<p>    A <b>Viewer</b> with information.</p>
-<h3>
-Glimpse Function
-</h3>
-<h4>
-  Syntax
-</h4>
-<p>
-    <code>glimpse( &lt;object&gt; )</code>
-</p>
-<h4>
-  Usage
-</h4>
-<p>
-    RStudio will output a short excerpt of data. <br>     This data will
-contain row, and column information, along with a few valid rows.
-</p>
-<h4>
-  Output
-</h4>
-<p>
-    A tibble of data; by default into the console<br>
-</p>
-</div>
+<table>
+<tr>
+<th>
+R Symbol
+</th>
+<th>
+Operation
+</th>
+</tr>
+<tr>
+<td>
++
+</td>
+<td>
+Addition
+</td>
+</tr>
+<tr>
+<td>
+-
+</td>
+<td>
+Subtraction
+</td>
+</tr>
+<tr>
+<td>
+*
+</td>
+<td>
+Multiplication
+</td>
+</tr>
+<tr>
+<td>
+/
+</td>
+<td>
+Division
+</td>
+</tr>
+<tr>
+<td>
+^ OR **
+</td>
+<td>
+Exponentiation
+</td>
+</tr>
+</table>
+<ul>
+<li>
+These can be used together in parentheses () to determine the order of
+operations (PEMDAS)
+</li>
+</ul>
+<table>
+<tr>
+<th>
+R Symbol
+</th>
+<th>
+Description
+</th>
+<th>
+Math Symbol
+</th>
+</tr>
+<tr>
+<td>
+sqrt(x)
+</td>
+<td>
+Square Root
+</td>
+<td>
+√ x
+</td>
+</tr>
+<tr>
+<td>
+exp(x)
+</td>
+<td>
+e raised to the x power
+</td>
+<td>
+e^x
+</td>
+</tr>
+<tr>
+<td>
+log(x)
+</td>
+<td>
+Natural Log
+</td>
+<td>
+ln(x)
+</td>
+</table>
+<table>
+<tr>
+<th>
+R Symbol
+</th>
+<th>
+Description
+</th>
+<th>
+Example
+</th>
+</tr>
+<tr>
+<td>
+#
+</td>
+<td>
+Comment (doesn’t run this part in code chunk)
+</td>
+<td>
+#comment
+</td>
+</tr>
+<tr>
+<td>
+&lt;-
+</td>
+<td>
+Assignment (provides a variable with a value)
+</td>
+<td>
+x &lt;- 5
+</td>
+</tr>
+</table>
 
 
 

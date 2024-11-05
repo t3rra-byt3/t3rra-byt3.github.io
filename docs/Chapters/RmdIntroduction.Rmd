@@ -1,0 +1,124 @@
+---
+title: "STAT 311 Reference Sheet: Introduction to Rmd"
+output: html_document
+---
+<style>
+        /* Table Styling */
+        table {
+            width: 50%; /* Adjust as needed */
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            <!--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);-->
+        }
+
+        /* Header Styling */
+        th {
+            background-color: #4B2D83;
+            color: white;
+            padding: 12px;
+            font-size: 1.1em;
+        }
+
+        /* Cell Styling */
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        /* Row Alternating Color */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+        }
+        
+        h4 {
+            color: #4B2D83;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+    </style>
+
+<div>  
+  <h3> Basic R Commands </h3>
+  <table>
+    <tr>
+      <th>R Symbol</th>
+      <th>Operation</th>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>Addition</td>
+    </tr>
+     <tr>
+      <td>-</td>
+      <td>Subtraction</td>
+    </tr>
+     <tr>
+      <td>*</td>
+      <td>Multiplication</td>
+    </tr>
+     <tr>
+      <td>/</td>
+      <td>Division</td>
+    </tr>
+     <tr>
+      <td>^ OR **</td>
+      <td>Exponentiation</td>
+    </tr>
+  </table>
+  <ul>
+    <li>
+      These can be used together in parentheses () to determine the order of operations (PEMDAS)
+    </li>
+  </ul>
+  <table>
+    <tr>
+      <th>R Symbol</th>
+      <th>Description</th>
+      <th>Math Symbol</th>
+    </tr>
+    <tr>
+      <td>sqrt(x)</td>
+      <td>Square Root</td>
+      <td>&radic;	x</td>
+    </tr>
+     <tr>
+      <td>exp(x)</td>
+      <td>e raised to the x power</td>
+      <td>e^x</td>
+    </tr>
+     <tr>
+      <td>log(x)</td>
+      <td>Natural Log</td>
+      <td>ln(x)</td>
+  </table>
+  
+  <table>
+    <tr>
+      <th>R Symbol</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>#</td>
+      <td>Comment (doesn't run this part in code chunk)</td>
+      <td>#comment</td>
+    </tr>
+     <tr>
+      <td><-</td>
+      <td>Assignment (provides a variable with a value)</td>
+      <td>x <- 5</td>
+    </tr>
+  </table>
+
+  
+
