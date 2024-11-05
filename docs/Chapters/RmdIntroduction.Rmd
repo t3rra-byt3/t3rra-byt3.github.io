@@ -10,7 +10,6 @@ output: html_document
             margin: 20px auto;
             font-family: Arial, sans-serif;
             text-align: center;
-            <!--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);-->
         }
 
         /* Header Styling */
@@ -45,7 +44,7 @@ output: html_document
             margin-left: 20px;
         }
 
-    </style>
+</style>
 
 <div>  
   <h3> Basic R Commands </h3>
@@ -89,7 +88,7 @@ output: html_document
     <tr>
       <td>sqrt(x)</td>
       <td>Square Root</td>
-      <td>&radic;	x</td>
+      <td>&radic; x</td>
     </tr>
      <tr>
       <td>exp(x)</td>
@@ -119,6 +118,35 @@ output: html_document
       <td>x <- 5</td>
     </tr>
   </table>
-
   
+  <h3>How do I create a new Code Chunk? </h3>
+  <h4>&emsp; Syntax </h4>
+  <p> 
+     &emsp;&emsp;&#96;&#96;&#96; {r <i>code-chunk-label</i>}<br>&emsp;
+     &emsp;&emsp;#your code here
+     <br>&emsp;&emsp;&#96;&#96;&#96;
+  </p>
+  <p>
+    &emsp;&emsp; <b>Replace</b> <i>code-chunk-label</i> with what you want to label that code chunk
+  </p>
+  
+  <h3>How do I create a new Title/Header?</h3>
+  
+  <!-- New Section -->
+  <h4>Notes on Headers and Comments</h4>
+  <ul>
+    <li>
+    When used on the yellow background, the <code>#</code> symbol creates titles and headers that show up in large font in the output document. 
+    </li>
+    <li>
+    We use text such as <code>## Exercises</code> and <code>### Exercise1</code> to label exercises as first and second level headers. 
+    </li>
+    <li>
+      However, when used inside a code chunk, the <code>#</code>            symbol in R creates a code <em>comment</em>. This can be used to        write regular text inside a code chunk. 
+    </li>
+    <li>
+      Any text written in a code chunk after the <code>#</code> symbol         is ignored; it is not run as R code.
+    </li>
+  </ul>
 
+</div>

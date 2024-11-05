@@ -362,42 +362,35 @@ border-collapse: collapse;
 margin: 20px auto;
 font-family: Arial, sans-serif;
 text-align: center;
-<!--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);-->
-        }
+}
 
-        /* Header Styling */
-        th {
-            background-color: #4B2D83;
-            color: white;
-            padding: 12px;
-            font-size: 1.1em;
-        }
+th {
+background-color: #4B2D83;
+color: white;
+padding: 12px;
+font-size: 1.1em;
+}
 
-        /* Cell Styling */
-        td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            font-size: 1em;
-        }
+td {
+padding: 10px;
+border: 1px solid #ddd;
+font-size: 1em;
+}
 
-        /* Row Alternating Color */
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        /* Header colors for sections */
-        h3 {
-            color: orange;
-            text-align: center;
-        }
-        
-        h4 {
-            color: #4B2D83;
-            font-weight: bold;
-            margin-left: 20px;
-        }
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
 
-    </style>
+h3 {
+color: orange;
+text-align: center;
+}
+h4 {
+color: #4B2D83;
+font-weight: bold;
+margin-left: 20px;
+}
+</style>
 <div>
 <h3>
 Basic R Commands
@@ -538,6 +531,46 @@ x &lt;- 5
 </td>
 </tr>
 </table>
+<h3>
+How do I create a new Code Chunk?
+</h3>
+<h4>
+  Syntax
+</h4>
+<p>
+  ``` {r <i>code-chunk-label</i>}<br>    #your code here <br>  ```
+</p>
+<p>
+   <b>Replace</b> <i>code-chunk-label</i> with what you want to label
+that code chunk
+</p>
+<h3>
+How do I create a new Title/Header?
+</h3>
+<!-- New Section -->
+<h4>
+Notes on Headers and Comments
+</h4>
+<ul>
+<li>
+When used on the yellow background, the <code>#</code> symbol creates
+titles and headers that show up in large font in the output document.
+</li>
+<li>
+We use text such as <code>## Exercises</code> and <code>###
+Exercise1</code> to label exercises as first and second level headers.
+</li>
+<li>
+However, when used inside a code chunk, the <code>#</code> symbol in R
+creates a code <em>comment</em>. This can be used to write regular text
+inside a code chunk.
+</li>
+<li>
+Any text written in a code chunk after the <code>#</code> symbol is
+ignored; it is not run as R code.
+</li>
+</ul>
+</div>
 
 
 
