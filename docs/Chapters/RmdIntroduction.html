@@ -357,38 +357,52 @@ Rmd</h1>
 <style>
 
 table {
-width: 50%; 
+width: 60%;
 border-collapse: collapse;
 margin: 20px auto;
 font-family: Arial, sans-serif;
+font-size: 1em;
 text-align: center;
 }
 
 th {
 background-color: #4B2D83;
 color: white;
-padding: 12px;
-font-size: 1.1em;
+padding: 10px;
 }
 
 td {
-padding: 10px;
+padding: 8px;
 border: 1px solid #ddd;
-font-size: 1em;
 }
 
 tr:nth-child(even) {
-background-color: #f2f2f2;
+background-color: #f9f9f9;
 }
 
 h3 {
 color: orange;
 text-align: center;
+margin-top: 30px;
+font-size: 1.5em;
 }
 h4 {
 color: #4B2D83;
-font-weight: bold;
 margin-left: 20px;
+font-weight: bold;
+font-size: 1.2em;
+}
+
+code {
+background-color: #f4f4f4;
+padding: 2px 5px;
+border-radius: 3px;
+}
+
+p, ul {
+font-size: 1em;
+line-height: 1.6;
+margin: 10px 20px;
 }
 </style>
 <div>
@@ -447,8 +461,7 @@ Exponentiation
 </table>
 <ul>
 <li>
-These can be used together in parentheses () to determine the order of
-operations (PEMDAS)
+Use parentheses <code>()</code> to set order of operations (PEMDAS).
 </li>
 </ul>
 <table>
@@ -495,6 +508,7 @@ Natural Log
 <td>
 ln(x)
 </td>
+</tr>
 </table>
 <table>
 <tr>
@@ -513,10 +527,10 @@ Example
 #
 </td>
 <td>
-Comment (doesn’t run this part in code chunk)
+Comment (ignored in code execution)
 </td>
 <td>
-#comment
+<code># This is a comment</code>
 </td>
 </tr>
 <tr>
@@ -524,50 +538,48 @@ Comment (doesn’t run this part in code chunk)
 &lt;-
 </td>
 <td>
-Assignment (provides a variable with a value)
+Assignment (sets a value to a variable)
 </td>
 <td>
-x &lt;- 5
+<code>x &lt;- 5</code>
 </td>
 </tr>
 </table>
 <h3>
-How do I create a new Code Chunk?
+How to Create a New Code Chunk
 </h3>
 <h4>
-  Syntax
+ Syntax
 </h4>
 <p>
-  ``` {r <i>code-chunk-label</i>}<br>    #your code here <br>  ```
+  <code>```{r code-chunk-label}</code><br>   <code># your code here
+</code>   <code>```</code>
 </p>
 <p>
-   <b>Replace</b> <i>code-chunk-label</i> with what you want to label
-that code chunk
+  <strong>Replace</strong> <i>code-chunk-label</i> with a label for your
+code chunk.
 </p>
 <h3>
-How do I create a new Title/Header?
+How to Create Titles and Headers
 </h3>
-<!-- New Section -->
 <h4>
 Notes on Headers and Comments
 </h4>
 <ul>
 <li>
-When used on the yellow background, the <code>#</code> symbol creates
-titles and headers that show up in large font in the output document.
+In an R Markdown document, <code>#</code> at the beginning of a line
+creates a title or header in the output.
 </li>
 <li>
-We use text such as <code>## Exercises</code> and <code>###
-Exercise1</code> to label exercises as first and second level headers.
+For example, use <code>## Exercises</code> and <code>###
+Exercise1</code> for first and second-level headers.
 </li>
 <li>
-However, when used inside a code chunk, the <code>#</code> symbol in R
-creates a code <em>comment</em>. This can be used to write regular text
-inside a code chunk.
+Inside a code chunk, <code>#</code> denotes comments, allowing you to
+write explanations that won’t run as R code.
 </li>
 <li>
-Any text written in a code chunk after the <code>#</code> symbol is
-ignored; it is not run as R code.
+Any text after <code>#</code> within a code chunk is ignored by R.
 </li>
 </ul>
 </div>
