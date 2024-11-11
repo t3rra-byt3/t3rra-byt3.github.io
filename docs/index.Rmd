@@ -60,10 +60,14 @@ output: html_document
       <a href="Chapters/RmdIntroduction.html">Rmd Introduction</a>
     </li>
     <li>
+      <a href="Chapters/RmdShortcuts.html">Keyboard Shortcuts</a>
+    </li>
+    <li>
       <a href="Chapters/Chapter1.html">Chapter 1</a>
     </li>
     <li>
-      <a href="Chapters/RmdShortcuts.html">Keyboard Shortcuts</a>
+      <a href="Chapters/Chapter3.html">Chapter 3</a>
     </li>
+
   </ul>
 </div>

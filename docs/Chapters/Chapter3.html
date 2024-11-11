@@ -11,7 +11,7 @@
 
 
 
-<title>STAT 311 Reference Sheet: R Studio Keyboard Shortcuts</title>
+<title>STAT 311 Reference Sheet Chapter 3</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,8 +348,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">STAT 311 Reference Sheet: R Studio Keyboard
-Shortcuts</h1>
+<h1 class="title toc-ignore">STAT 311 Reference Sheet Chapter 3</h1>
 
 </div>
 
@@ -359,66 +358,293 @@ Shortcuts</h1>
 h3 {
 color: orange;
 text-align: center;
+background-color: #4B2D83;
+padding: 10px;
+border-radius: 3px;
+display: inline-block;
 }
-h5 {
-color: #4B2D83;
-font-weight: bold;
+h4 {
+color: #000000;
 text-align: center;
-margin-bottom: 10px;
+background-color: #a6c8ff;
+padding: 1px;
+border-radius: 3px;
+width: 200px;
 }
 
-.note {
-font-size: 0.9em;
-text-align: center;
-font-style: italic;
-color: #555;
-margin-top: 20px;
+tr {
+display: flex;
+flex-direction: column
+}
 }
 </style>
 <div>
-
+<table>
+<tr>
+<td>
 <h3>
-Save Document
+mosaicplot Function
 </h3>
-<p class="note">
-Ctrl + S (Windows) | Command + S (Mac)
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>mosaicplot( &lt;var1&gt; ~ &lt;var2&gt;, data = ..., shade = ... )</code>
 </p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Independent of ggplot(). Generates a mosaic plot between inputs <var1>
+and <var2>. the data <code>...</code> must have var1 and var2 as
+columns. Shade can be used to display residuals
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <h3>
-Run Line in Chunk
+tabyl Function
 </h3>
-<p class="note">
-Ctrl + Enter (Windows) | Command + Enter (Mac)
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>tabyl( &lt;data&gt; )</code>
 </p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Generates a frequency table for the data. The dplyr pipe operator can be
+used to add additional options to the data, such as <br>
+<code>adorn_totals()</code> to add <code>total</code> columns to the
+tabyl, or <code>adorn_title()</code> for labeling the table
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <h3>
-Run Entire Code Chunk
+dplyr data manipulation
 </h3>
-<p class="note">
-Ctrl + Shift + Enter (Windows) | Command + Shift + Enter (Mac)
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+There are many operators for data manipulation in the <code>dplyr</code>
+package. Here are a few.
 </p>
+<p>
+<code>select()</code> picks out the columns specified <br>
+<code>filter()</code> subsets rows of data based on the condition <br>
+<code>count()</code> creates a data visualization called a
+<code>frequency</code> table. Showing counts of values. <br>
+<code>summarize()</code> generates selected summary statistics for the
+data. A much faster way to generate summary statistics is simply using
+the built in <code>summary()</code> keyword.
+</p>
+</tr>
+<tr>
+<td>
 <h3>
-Search Help for Item (Step Into)
+dplyr pipe operators; other operators
 </h3>
-<p class="note">
-F1 key (or fn + F1 if keybinds are swapped)
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>%&gt;%</code>
 </p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+Feeds output or data directly into the next function. By default, the
+pipe %&gt;% autofills the first parameter of functions(), so it is not
+required to specify the first parameter for those functions. <br> R
+itself has built in operators similar to this like <code>%in%</code>
+(checks set containment), <code>%/%</code> (integer division), and
+<code>%%</code> (modulus operator)
+</td>
+</tr>
+<tr>
+<td>
 <h3>
-Quick Insert Code Chunk
+ggplot Function
 </h3>
-<p class="note">
-Ctrl + Alt + I (Windows) | Command + Option + I (Mac)
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>ggplot(data = ..., mapping = aes(...)) + ...</code>
 </p>
+</td>
+<td>
+<h4>
+Inputs for <code>...</code>
+</h4>
+</td>
+<td>
+<p>
+<code>data = ...</code> A data frame, or other form of data in table
+format. <em>Hint</em> you can modify data using commands such as
+<code>filter</code> from dplyr or <code>mutate</code>
+</p>
+<p>
+<code>mapping = aes(...)</code> Aesthetics in R are the “variables” that
+are used to determine graphing parameters. Common inputs used: <br>
+ <code>x = &lt;column_name&gt;</code> used in most plots, is the
+“explanatory” variable <br>  <code>y = &lt;column_name&gt;</code> used
+in relational plots. In relational models, it is the “response”
+variable. <br>  <code>fill = &lt;column_name&gt;</code> used to
+automatically create separate plots for each type of object in the
+selected column. A legend will be automatically created to label the
+different categories. <br>  <code>color = &lt;column_name&gt;</code>
+used to fill in points for <i>scatterplots</i>. Color gradient can be
+modified with <code>scale_colour</code>.
+</p>
+<p>
+<code>+ ...</code> to add plot layouts to the ggplot; additional details
+below
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Used to generate plots on specific data. Returns a <code>ggplot</code>
+object representing the visualization
+</p>
+</td>
+<tr>
+<tr>
+<td>
 <h3>
-Knit Entire Document
+geom_plot Function Family
 </h3>
-<p class="note">
-Ctrl + Shift + K (Windows) | Command + Shift + K (Mac)
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>geom_...</code>
 </p>
-<div class="note">
-<pre><code>Basic shortcuts you will use most often. For more shortcuts, check 
-Tools → Keyboard Shortcuts Help 
-or press 
-Alt + Shift + K (Windows) / Option + Shift + K (Mac).
-&lt;img src=&quot;../Images/KeyboardShortcuts.png&quot; width=&quot;252&quot; /&gt;</code></pre>
+</td>
+<td>
+<h4>
+Inputs for <code>...</code>
+</h4>
+</td>
+<td>
+<p><code>...</code> RStudio will by default display a menu that shows
+possible autocompletes for this. There are many types of plots; they
+will not be detailed here. Below is a list of plots likely to be used in
+this course.</p>
+<p>
+  <code>geom_boxplot()</code> boxplots compare <b> categorical </b>
+variables with <b> quantitative </b> variables
+</p>
+<p>
+  <code>geom_point()</code> scatterplots compare 2 <b>quantitative</b>
+variables
+</p>
+<p>
+  <code>geom_histogram()</code> histograms display the distribution of 1
+<b>quantitative</b> variable
+</p>
+<p>
+  <code>geom_density()</code> similar to histogram, displays the
+distribution of 1 <b>quantitative</b> variable
+</p>
+<p>
+  <code>geom_bar()</code> can be used to describe proportions of
+<b>categorical</b> data. Adding a <code>fill</code> to the ggplot
+mapping aesthethic can transform it into a segmented bar plot.
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+other ggplot() options
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>+ ...</code> (append this to the end of your ggplot line)
+</p>
+</td>
+<td>
+<h4>
+Inputs for <code>...</code>
+</h4>
+</td>
+<td>
+<p>
+<code>labs(x = ..., y = ..., title = ..., ...)</code> Labels for the
+plots
+</p>
+<p>
+<code>facet_grid( &lt;var1&gt; ~ &lt;var2&gt;)</code> Creates a grid of
+plots for 2 categorical variables.
+</p>
+<p>
+<code>facet_grid( ~ &lt;var1&gt;)</code> Creates a grid of plots for 1
+categorical variable.
+</p>
+<p>
+<code>theme(...)</code> Modifies the plot style itself. Common commands
+like <code>axis.ticks.y=element_blank()</code> (Hides tick marks on y
+axis) and <code>axis.text.y=element_blank()</code> (Hides labels on y
+axis ticks) are used in this course for styling.
+</p>
+<code>scale_colour_...</code> adds or changes color gradient to points
+on a scatterplot.
+<td>
+</tr>
+</table>
 </div>
 
 

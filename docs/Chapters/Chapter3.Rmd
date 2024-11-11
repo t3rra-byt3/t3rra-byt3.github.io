@@ -1,0 +1,153 @@
+---
+title: "STAT 311 Reference Sheet Chapter 3"
+output: html_document
+---
+
+<style>
+
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+            background-color: #4B2D83;
+            padding: 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        h4 {
+            color: #000000;
+            text-align: center;
+
+            background-color: #a6c8ff;
+            padding: 1px;
+            border-radius: 3px;
+            width: 200px;
+        }
+        
+        /* table rows for each function*/
+        tr {
+            display: flex;
+            flex-direction: column
+        }
+}
+
+</style>
+
+<div>
+  <table>
+    <tr>
+    <td> <h3> mosaicplot Function </h3> </td>
+    <td> <h4> Syntax </h4> </td>
+    <td> <p> ```mosaicplot( <var1> ~ <var2>, data = ..., shade = ... )``` </p> </td>
+    <td> <h4> Usage </h4> </td> 
+    <td> <p> Independent of ggplot(). Generates a mosaic plot between inputs <var1> and <var2>. the data ```...``` must have var1 and var2 as columns. Shade can be used to display residuals</p> </td>
+    </tr>
+    <tr>
+      <td> <h3> tabyl Function </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> <p> ```tabyl( <data> )``` </p> </td>
+      <td> <h4> Usage </h4> </td> 
+      <td> <p> Generates a frequency table for the data. The dplyr pipe operator can be used to add additional options to the data, such as 
+      <br> ```adorn_totals()``` to add ```total``` columns to the tabyl, or ```adorn_title()``` for labeling the table </p> </td>
+    </tr>
+    <tr>
+      <td> <h3> dplyr data manipulation </h3> </td>
+      <td> <h4> Usage </h4> </td>
+      <td> 
+        <p> There are many operators for data manipulation in the ```dplyr``` package. Here are a few.</p>
+        <p>```select()``` picks out the columns specified
+        <br> ```filter()``` subsets rows of data based on the condition
+        <br> ```count()``` creates a data visualization called a ```frequency``` table. Showing counts of values.
+        <br> ```summarize()``` generates selected summary statistics for the data. A much faster way to generate summary statistics is simply using the built in ```summary()``` keyword. </p>
+    </tr>
+    <tr>
+      <td> <h3> dplyr pipe operators; other operators </h3></td>
+      <td> <h4> Syntax </h4> </td>
+      <td>
+        <p>
+          ```%>%```
+        </p>
+      </td>
+      <td> <h4>Usage </h4> </td>
+      <td> Feeds output or data directly into the next function. By default, the pipe %>% autofills the first parameter of functions(), so it is not required to specify the first parameter for those functions. <br> R itself has built in operators similar to this like ```%in%``` (checks set containment), ```%/%``` (integer division), and ```%%``` (modulus operator)
+      </td>
+    </tr>
+        
+    <tr>
+      <td> <h3> ggplot Function </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td>
+        <p>
+          ```ggplot(data = ..., mapping = aes(...)) + ...```
+        </p>
+      </td>
+      <td> <h4> Inputs for ```...```</h4> </td>
+      <td>
+          <p>```data = ...``` A data frame, or other form of data in table format. *Hint* you can modify data using commands such as ```filter``` from dplyr or ```mutate``` </p>
+          <p>```mapping = aes(...)``` Aesthetics in R are the "variables" that are used
+            to determine graphing parameters. Common inputs used: 
+            <br> &emsp;```x = <column_name>``` used in most plots, is the "explanatory" variable
+            <br> &emsp;```y = <column_name>``` used in relational plots. In relational models, it is the "response" variable. 
+            <br> &emsp;```fill = <column_name>``` used to automatically create separate plots for each type of object in the selected column. A legend will be automatically created to label the different categories.
+            <br> &emsp;```color = <column_name>``` used to fill in points for <i>scatterplots</i>. Color gradient can be modified with ```scale_colour```.
+          </p>
+          <p> ```+ ...``` to add plot layouts to the ggplot; additional details below </p>
+      </td>
+      <td> <h4>Usage</h4> </td>
+      <td> <p> Used to generate plots on specific data. Returns a ```ggplot``` object representing the visualization </p> </td>
+
+  <tr>
+    
+  <tr>
+      <td> <h3> geom_plot Function Family </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td>
+          <p>
+          ```geom_...```
+          </p>
+      </td>
+      <td> <h4> Inputs for ```...```</h4> </td>
+      <td>
+        ```...``` RStudio will by default display a menu that shows
+        possible autocompletes for this. There are many types of            plots; they will not be detailed here. Below is a list of             plots likely to be used in this course. 
+        
+        <p> &emsp; ```geom_boxplot()``` boxplots compare <b> categorical </b> variables with <b> quantitative </b> variables</p>
+        
+        <p> &emsp; ```geom_point()``` scatterplots compare 2 <b>quantitative</b> variables </p>
+        
+        <p> &emsp; ```geom_histogram()``` histograms display the distribution of 1 <b>quantitative</b> variable</p>
+        
+        <p> &emsp; ```geom_density()``` similar to histogram, displays the distribution of 1 <b>quantitative</b> variable</p>
+        
+        <p> &emsp; ```geom_bar()``` can be used to describe proportions of <b>categorical</b> data. Adding a ```fill``` to the ggplot mapping aesthethic can transform it into a segmented bar plot.
+      </td>
+  </tr>
+  
+  <tr>
+    <td> <h3> other ggplot() options </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td>
+          <p>
+          ```+ ...``` (append this to the end of your ggplot line)
+          </p>
+      </td>
+      <td> <h4> Inputs for ```...```</h4> </td>
+      
+      <td>
+        <p>```labs(x = ..., y = ..., title = ..., ...)``` Labels for the plots </p>
+        <p>```facet_grid( <var1> ~ <var2>)``` Creates a grid of plots for 2 categorical variables.</p>
+        <p>```facet_grid( ~ <var1>)``` Creates a grid of plots for 1 categorical variable.  </p>
+        <p>```theme(...)``` Modifies the plot style itself. Common commands like
+        ```axis.ticks.y=element_blank()``` (Hides tick marks on y axis) and
+        ```axis.text.y=element_blank()``` (Hides labels on y axis ticks) are used
+        in this course for styling. </p>
+        
+        ```scale_colour_...``` adds or changes color gradient to points on a scatterplot.
+      <td>
+
+  </tr>
+    
+  </table>
+  
+</div>
