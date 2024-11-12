@@ -1,0 +1,66 @@
+---
+title: "STAT 311 Reference Sheet Chapter 4"
+output: html_document
+---
+
+<style>
+
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+            background-color: #4B2D83;
+            padding: 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        h4 {
+            color: #000000;
+            text-align: center;
+
+            background-color: #a6c8ff;
+            padding: 1px;
+            border-radius: 3px;
+            width: 200px;
+        }
+        
+        /* table rows for each function*/
+        tr {
+            display: flex;
+            flex-direction: column
+        }
+}
+
+</style>
+
+<div>
+  <table>
+    <tr>
+    <td> <h3>Transforming Variables</h3> </td>
+    <td> <h4> Syntax </h4> </td>
+    <td> <p> ```<dataset> <- <dataset> %>%```
+    <br>&emsp;&emsp;
+     ```mutate(<new_var1> = {operation}(<var1>),``` <br>&emsp;&emsp;
+     ```<new_var2> = ...)```
+     </p> </td>
+    <td> <h4> Usage </h4> </td> 
+    <td> <p> We often try to make simple transformation of one or both variables (explanatory and/or response) when the distribution is heavily skewed in order to achieve a linear model in the transformed scale. A common transformation is the common logarithm ```log10```. <b>Keep in mind what transformations you did when interpreting a model.</b></p> </td>
+    </tr>
+    <tr>
+      <td> <h3> Linear Model using R (lm function) </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> <p> ```<model_name> <- lm(<response_variable> ~ <explanatory_variable>, data = <dataset>)``` </p> </td>
+      <td> <h4> Usage </h4> </td> 
+      <td> <p> Generates a linear model for the relationship between two <b>quantitative</b> variables. </p> </td>
+    </tr>
+    <tr>
+      <td> <h3> Tidy View of Linear Model </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> <p> ```<model_name> %>% tidy()``` </p> </td>
+      <td> <h4> Usage </h4> </td> 
+      <td> <p> This step comes after generating a model with the ```lm``` function. It can be used to write the equation of the model using the estimate column.</p> </td>    </tr>
+    
+  </table>
+  
+</div>

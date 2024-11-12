@@ -11,7 +11,7 @@
 
 
 
-<title>STAT 311 Cheatsheet</title>
+<title>STAT 311 Reference Sheet Chapter 4</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,79 +348,129 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">STAT 311 Cheatsheet</h1>
+<h1 class="title toc-ignore">STAT 311 Reference Sheet Chapter 4</h1>
 
 </div>
 
 
 <style>
 
-#toc {
-width: 60%;
-margin: 0 auto;
-font-family: Arial, sans-serif;
-font-size: 1.1em;
-color: #333;
-}
-
-#toc h2 {
+h3 {
+color: orange;
 text-align: center;
-color: #4B2D83;
-font-size: 1.8em;
-margin-bottom: 20px;
-border-bottom: 2px solid #4B2D83;
-padding-bottom: 10px;
-}
-
-#toc ul {
-list-style: none;
-padding: 0;
-}
-#toc li {
-margin: 15px 0;
+background-color: #4B2D83;
 padding: 10px;
-background-color: #f7f7f7;
-border-radius: 5px;
+border-radius: 3px;
+display: inline-block;
+}
+h4 {
+color: #000000;
 text-align: center;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+background-color: #a6c8ff;
+padding: 1px;
+border-radius: 3px;
+width: 200px;
 }
-#toc a {
-text-decoration: none;
-color: #4B2D83;
-font-weight: bold;
-transition: color 0.3s;
+
+tr {
+display: flex;
+flex-direction: column
 }
-#toc a:hover {
-color: #FF8C00;
 }
 </style>
-<div id="toc">
-<h2>
-Table of Contents
-</h2>
-<ul>
-<li>
-<a href="Chapters/RStudioHelp.html">RStudio Help</a>
-</li>
-<li>
-<a href="Chapters/RmdIntroduction.html">Rmd Introduction</a>
-</li>
-<li>
-<a href="Chapters/RmdShortcuts.html">Keyboard Shortcuts</a>
-</li>
-<li>
-<a href="Chapters/Chapter1.html">Chapter 1</a>
-</li>
-<li>
-<a href="Chapters/Chapter2.html">Chapter 2</a>
-</li>
-<li>
-<a href="Chapters/Chapter3.html">Chapter 3</a>
-</li>
-<li>
-<a href="Chapters/Chapter4.html">Chapter 4</a>
-</li>
-</ul>
+<div>
+<table>
+<tr>
+<td>
+<h3>
+Transforming Variables
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;dataset&gt; &lt;- &lt;dataset&gt; %&gt;%</code> <br>  
+<code>mutate(&lt;new_var1&gt; = {operation}(&lt;var1&gt;),</code> <br>  
+<code>&lt;new_var2&gt; = ...)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+We often try to make simple transformation of one or both variables
+(explanatory and/or response) when the distribution is heavily skewed in
+order to achieve a linear model in the transformed scale. A common
+transformation is the common logarithm <code>log10</code>. <b>Keep in
+mind what transformations you did when interpreting a model.</b>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Linear Model using R (lm function)
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;model_name&gt; &lt;- lm(&lt;response_variable&gt; ~ &lt;explanatory_variable&gt;, data = &lt;dataset&gt;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Generates a linear model for the relationship between two
+<b>quantitative</b> variables.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Tidy View of Linear Model
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;model_name&gt; %&gt;% tidy()</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+This step comes after generating a model with the <code>lm</code>
+function. It can be used to write the equation of the model using the
+estimate column.
+</p>
+</td>
+</tr>
+</table>
 </div>
 
 

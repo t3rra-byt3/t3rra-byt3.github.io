@@ -116,6 +116,8 @@ output: html_document
         
         <p> &emsp; ```geom_point()``` scatterplots compare 2 <b>quantitative</b> variables </p>
         
+        <p> &emsp; ```geom_smooth(method = "lm")``` draws a line of best fit in a scatterplot (<b>added after geom_point()</b>). If method = "lm" is specified then it'll draw a linear line. </p>
+        
         <p> &emsp; ```geom_histogram()``` histograms display the distribution of 1 <b>quantitative</b> variable</p>
         
         <p> &emsp; ```geom_density()``` similar to histogram, displays the distribution of 1 <b>quantitative</b> variable</p>
