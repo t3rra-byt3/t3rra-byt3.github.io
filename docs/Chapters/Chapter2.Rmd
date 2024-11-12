@@ -1,0 +1,77 @@
+---
+title: "STAT 311 Reference Sheet Chapter 2"
+output: html_document
+---
+
+<style>
+
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+            background-color: #4B2D83;
+            padding: 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        h4 {
+            color: #000000;
+            text-align: center;
+
+            background-color: #a6c8ff;
+            padding: 1px;
+            border-radius: 3px;
+            width: 200px;
+        }
+        
+        /* table rows for each function*/
+        tr {
+            display: flex;
+            flex-direction: column
+        }
+}
+
+</style>
+
+<div>
+  <table>
+    <tr>
+    <td> <h3> Learning about data within Dplyr Dataset </h3> </td>
+    <td> <h4> Syntax </h4> </td>
+    <td> <p> ```?<dataset>``` <b>OR</b> ```help(<dataset>)```</p> </td>
+    <td> <h4> Usage </h4> </td> 
+    <td> <p> Provides information about the dataset, such as a description of the general dataset, the format, and description of each of the variables </p> </td>
+    </tr>
+    <tr>
+      <td> <h3> Load dataset into the Environment with Dplyr </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> <p> ```data(<dataset>)``` </p> </td>
+      <td> <h4> Usage </h4> </td> 
+      <td> <p> Allows user to open the dataset as a separate table (to view the data) and perform actions to the dataset within the console </p> </td>
+    </tr>
+    <tr>
+      <td> <h3> Glimpse at dataset with Dplyr </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> <p> ```glimpse(<dataset>)``` </p> </td>
+      <td> <h4> Usage </h4> </td> 
+      <td> <p> Provides the client with the amount of rows and columns, the names of the variables in the columns, some of the data in the columns, and the type of data in each column </p> </td>
+    </tr>
+    <tr>
+      <td> <h3> typeof Function </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> <p> ```typeof(<value>)``` </p> </td>
+      <td> <h4> Usage </h4> </td> 
+      <td> <p> Provides the client with the data type of the provided value </p> </td>
+      <td>
+        <h4> Examples </h4>
+        <p>```typeof(TRUE)``` returns "logical" (boolean values TRUE and FALSE) </p>
+        <p>```typeof("hello")``` returns "character" (character strings) </p>
+        <p>```typeof(4.775)``` <b>OR</b> ```typeof(3)``` returns "double" (floating point numerical values -> default numerical type) </p>
+        <p>```typeof(3L)``` returns "integer" (interger numerical values -> indicated with an L) </p>
+      <td>
+    </tr>
+    
+  </table>
+  
+</div>

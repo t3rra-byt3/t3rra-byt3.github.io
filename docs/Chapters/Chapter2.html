@@ -11,7 +11,7 @@
 
 
 
-<title>STAT 311 Cheatsheet</title>
+<title>STAT 311 Reference Sheet Chapter 2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,76 +348,172 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">STAT 311 Cheatsheet</h1>
+<h1 class="title toc-ignore">STAT 311 Reference Sheet Chapter 2</h1>
 
 </div>
 
 
 <style>
 
-#toc {
-width: 60%;
-margin: 0 auto;
-font-family: Arial, sans-serif;
-font-size: 1.1em;
-color: #333;
-}
-
-#toc h2 {
+h3 {
+color: orange;
 text-align: center;
-color: #4B2D83;
-font-size: 1.8em;
-margin-bottom: 20px;
-border-bottom: 2px solid #4B2D83;
-padding-bottom: 10px;
-}
-
-#toc ul {
-list-style: none;
-padding: 0;
-}
-#toc li {
-margin: 15px 0;
+background-color: #4B2D83;
 padding: 10px;
-background-color: #f7f7f7;
-border-radius: 5px;
+border-radius: 3px;
+display: inline-block;
+}
+h4 {
+color: #000000;
 text-align: center;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+background-color: #a6c8ff;
+padding: 1px;
+border-radius: 3px;
+width: 200px;
 }
-#toc a {
-text-decoration: none;
-color: #4B2D83;
-font-weight: bold;
-transition: color 0.3s;
+
+tr {
+display: flex;
+flex-direction: column
 }
-#toc a:hover {
-color: #FF8C00;
 }
 </style>
-<div id="toc">
-<h2>
-Table of Contents
-</h2>
-<ul>
-<li>
-<a href="Chapters/RStudioHelp.html">RStudio Help</a>
-</li>
-<li>
-<a href="Chapters/RmdIntroduction.html">Rmd Introduction</a>
-</li>
-<li>
-<a href="Chapters/RmdShortcuts.html">Keyboard Shortcuts</a>
-</li>
-<li>
-<a href="Chapters/Chapter1.html">Chapter 1</a>
-</li>
-<li>
-<a href="Chapters/Chapter2.html">Chapter 2</a>
-</li>
-<li>
-<a href="Chapters/Chapter3.html">Chapter 3</a>
-</li>
-</ul>
+<div>
+<table>
+<tr>
+<td>
+<h3>
+Learning about data within Dplyr Dataset
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>?&lt;dataset&gt;</code> <b>OR</b>
+<code>help(&lt;dataset&gt;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Provides information about the dataset, such as a description of the
+general dataset, the format, and description of each of the variables
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Load dataset into the Environment with Dplyr
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>data(&lt;dataset&gt;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Allows user to open the dataset as a separate table (to view the data)
+and perform actions to the dataset within the console
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Glimpse at dataset with Dplyr
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>glimpse(&lt;dataset&gt;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Provides the client with the amount of rows and columns, the names of
+the variables in the columns, some of the data in the columns, and the
+type of data in each column
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+typeof Function
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>typeof(&lt;value&gt;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Provides the client with the data type of the provided value
+</p>
+</td>
+<td>
+<h4>
+Examples
+</h4>
+<p>
+<code>typeof(TRUE)</code> returns “logical” (boolean values TRUE and
+FALSE)
+</p>
+<p>
+<code>typeof(&quot;hello&quot;)</code> returns “character” (character strings)
+</p>
+<p>
+<code>typeof(4.775)</code> <b>OR</b> <code>typeof(3)</code> returns
+“double” (floating point numerical values -&gt; default numerical type)
+</p>
+<p>
+<code>typeof(3L)</code> returns “integer” (interger numerical values
+-&gt; indicated with an L)
+</p>
+<td>
+</tr>
+</table>
 </div>
 
 

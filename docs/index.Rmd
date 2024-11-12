@@ -49,7 +49,6 @@ output: html_document
         color: #FF8C00;
     }
 </style>
-<!--Did this work -->
 <div id="toc">
   <h2>Table of Contents</h2>
   <ul>
@@ -64,6 +63,9 @@ output: html_document
     </li>
     <li>
       <a href="Chapters/Chapter1.html">Chapter 1</a>
+    </li>
+    <li>
+      <a href="Chapters/Chapter2.html">Chapter 2</a>
     </li>
     <li>
       <a href="Chapters/Chapter3.html">Chapter 3</a>
