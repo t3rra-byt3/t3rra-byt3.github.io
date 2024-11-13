@@ -470,7 +470,7 @@ Syntax
 </td>
 <td>
 <p>
-<code>&lt;model_name&gt; &lt;- lm(&lt;response_variable&gt; ~ &lt;explanatory_variable&gt; + &lt;categorical_predictor&gt;, data = &lt;dataset&gt;)</code>
+<code>&lt;model_name&gt; &lt;- lm(&lt;response_variable&gt; ~ &lt;explanatory_variable&gt; + &lt;other_predictor&gt; + ... + &lt;last_predictor&gt;, data = &lt;dataset&gt;)</code>
 </p>
 </td>
 <td>
@@ -500,7 +500,7 @@ Syntax
 </td>
 <td>
 <p>
-<code>&lt;model_name&gt; &lt;- lm(&lt;response_variable&gt; ~ &lt;explanatory_variable&gt; * &lt;categorical_predictor&gt;, data = &lt;dataset&gt;)</code>
+<code>&lt;model_name&gt; &lt;- lm(&lt;response_variable&gt; ~ &lt;explanatory_variable&gt; * &lt;other_predictor&gt;, data = &lt;dataset&gt;)</code>
 </p>
 </td>
 <td>
@@ -603,7 +603,8 @@ estimate values are just examples.</b>
 </td>
 <td>
 <h4>
-Solving for Main Effects Linear Model Equations
+Solving for Main Effects Linear Model Equations (with a categorical
+predictor)
 </h4>
 </td>
 <td>
@@ -667,19 +668,30 @@ sedanyes
 </tr>
 </table>
 <p>
-horsepower_hat = 90 + (20 * sedanyes) + (-1.5 * car_age) <br><br> <u>If
-the car is a sedan (sedanyes = 1):</u><br> horsepower_hat = 110 - 1.5 *
-car_age<br><br> <u>If the car is an suv (sedanyes = 0):</u><br>
+<p>horsepower_hat = 90 + (20 * sedanyes) + (-1.5 * car_age) <br><br>
+<u>If the car is a sedan (sedanyes = 1):</u><br> horsepower_hat = 110 -
+1.5 * car_age<br><br> <u>If the car is an suv (sedanyes = 0):</u><br>
 horsepower_hat = 90 - 1.5 * car_age<br><br> Where horsepower_hat is a
 predicted value and car_age is the age of the car that is being observed
 (so that we can predict its horsepower using the model). sedanyes is a
 binary used to keep track of whether the car is a sedan or not.<b> All
-of the estimate values are just examples.</b>
+of the estimate values are just examples.</b><br><br></p>
+<p><u>Two Quantitative Predictors</u><br> If we have another
+quantitative predictor, other than the explanatory variable, then we
+would just have the estimate of that value be multiple by the observed
+value (just like the numerical explanatory variable). This would output
+the equation of a plane rather than a line.<br><br></p>
+<p>&lt;response_variable&gt;_hat = (Intercept) +
+(estimate_value_of_numerical_predictor) *
+&lt;numerical_predictor_observation&gt; +
+(estimate_value_of_explanatory_variable) *
+&lt;explanatory_variable_observation&gt;</p>
 </p>
 </td>
 <td>
 <h4>
-Solving for Interaction Effects Linear Model Equations
+Solving for Interaction Effects Linear Model Equations (with a
+categorical predictor)
 </h4>
 </td>
 <td>
@@ -763,6 +775,52 @@ the age of the car that is being observed (so that we can predict its
 horsepower using the model). sedanyes is a binary used to keep track of
 whether the car is a sedan or not. <b>All of the estimate values are
 just examples.</b>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Scatterplot Matrix
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>library(GGally)</code> <br>
+</p>
+</td>
+<td>
+<p>
+<code>&lt;dataframe&gt; %&gt;%</code>
+</p>
+</td>
+<td>
+<p>
+ <code>select(&lt;variable_1&gt;, &lt;variable_2&gt;, &lt;variable_3&gt;, ...) %&gt;%</code>
+</p>
+</td>
+<td>
+<p>
+ 
+ <code>ggpairs(title=&quot;What you are going to call the scatterplot matrix&quot;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Generates a scatterplot matrix between the specified variables, which
+contains scatterplots, graphs, and correlations coefficients. This tool
+is helpful in determining how highly correlated multiple variables in a
+dataset are.
 </p>
 </td>
 </tr>

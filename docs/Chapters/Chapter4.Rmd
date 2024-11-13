@@ -78,14 +78,14 @@ output: html_document
     <tr>
       <td> <h3> Main Effects Model using R </h3> </td>
       <td> <h4> Syntax </h4> </td>
-      <td> <p> ```<model_name> <- lm(<response_variable> ~ <explanatory_variable> + <categorical_predictor>, data = <dataset>)``` </p> </td>
+      <td> <p> ```<model_name> <- lm(<response_variable> ~ <explanatory_variable> + <other_predictor> + ... + <last_predictor>, data = <dataset>)``` </p> </td>
       <td> <h4> Usage </h4> </td> 
       <td> <p> Generates two equations using the main effects linear model for the relationship between <b>a categorical and quantitative predictor</b> and a <b>quantitative response variable</b>. The y-intercept varies between the two equations, but slope doesn't. </p> </td>
     </tr>
     <tr>
       <td> <h3> Interaction Effects Model using R </h3> </td>
       <td> <h4> Syntax </h4> </td>
-      <td> <p> ```<model_name> <- lm(<response_variable> ~ <explanatory_variable> * <categorical_predictor>, data = <dataset>)``` </p> </td>
+      <td> <p> ```<model_name> <- lm(<response_variable> ~ <explanatory_variable> * <other_predictor>, data = <dataset>)``` </p> </td>
       <td> <h4> Usage </h4> </td> 
       <td> <p> Generates two equations using the interaction effects linear model for the relationship between <b>a categorical and quantitative predictor</b> and a <b>quantitative response variable</b>. The y-intercept and slope varies between the two equations. </p> </td>
     </tr>
@@ -112,7 +112,7 @@ output: html_document
       <br><br>
       Where horsepower_hat is a predicted value and car_age is the age of the car that is being observed (so that we can predict its horsepower using the model).<b> All of the estimate values are just examples.</b>
       </p> </td>
-      <td> <h4> Solving for Main Effects Linear Model Equations</h4> </td> 
+      <td> <h4> Solving for Main Effects Linear Model Equations (with a categorical predictor)</h4> </td> 
       <td> <p> \<response_variable>_hat = (Intercept) + (estimate_value_of_categorical_predictor) * \<categorical_predictor>yes + (estimate_value_of_explanatory_variable) * \<explanatory_variable_observation> </p> </td>
       <td> <p> <u>For example (explanatory = car_age/response = horsepower/categorical predictor = sedan OR suv):</u><br></p>
       
@@ -133,10 +133,17 @@ output: html_document
       horsepower_hat = 110 - 1.5 * car_age<br><br>
       <u>If the car is an suv (sedanyes = 0):</u><br>
       horsepower_hat = 90 - 1.5 * car_age<br><br>
-      Where horsepower_hat is a predicted value and car_age is the age of the car that is being observed (so that we can predict its horsepower using the model). sedanyes is a binary used to keep track of whether the car is a sedan or not.<b> All of the estimate values are just examples.</b>
-      </p> </td>
+      Where horsepower_hat is a predicted value and car_age is the age of the car that is being observed (so that we can predict its horsepower using the model). sedanyes is a binary used to keep track of whether the car is a sedan or not.<b> All of the estimate values are just examples.</b><br><br>
       
-      <td> <h4> Solving for Interaction Effects Linear Model Equations</h4> </td> 
+  <u>Two Quantitative Predictors</u><br>
+  If we have another quantitative predictor, other than the explanatory variable, then we would just have the estimate of that value be multiple by the observed value (just like the numerical explanatory variable). This would output the equation of a plane rather than a line.<br><br>
+      
+  \<response_variable>_hat = (Intercept) + (estimate_value_of_numerical_predictor) * \<numerical_predictor_observation> + (estimate_value_of_explanatory_variable) * \<explanatory_variable_observation>
+
+
+  </p> </td>
+      
+  <td> <h4> Solving for Interaction Effects Linear Model Equations (with a categorical predictor)</h4> </td> 
       <td> <p> \<response_variable>_hat = (Intercept) + (estimate_value_of_categorical_predictor) * \<categorical_predictor>yes + (estimate_value_of_explanatory_variable) * \<explanatory_variable_observation> </p> </td>
       <td> <p> <u>For example (explanatory = car_age/response = horsepower/categorical predictor = sedan OR suv):</u><br></p>
       
@@ -164,7 +171,17 @@ output: html_document
       </p> </td>
       
       
-      </tr>
+  </tr>
+      <tr>
+      <td> <h3> Scatterplot Matrix </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> <p> ```library(GGally)``` <br></p> </td>
+      <td> <p> ```<dataframe> %>%``` </p> </td>
+      <td> <p> &emsp;```select(<variable_1>, <variable_2>, <variable_3>, ...) %>%``` </p> </td>
+      <td> <p> &emsp; &emsp;```ggpairs(title="What you are going to call the scatterplot matrix")``` </p> </td>
+      <td> <h4> Usage </h4> </td> 
+      <td> <p> Generates a scatterplot matrix between the specified variables, which contains scatterplots, graphs, and correlations coefficients. This tool is helpful in determining how highly correlated multiple variables in a dataset are. </p> </td>
+    </tr>
       <tr>
       <td> <h3> Goodness of Fit Measures </h3> </td>
       <td> <h4> Syntax </h4> </td>
