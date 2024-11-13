@@ -865,6 +865,139 @@ model fits observations).
 </p>
 </td>
 </tr>
+<tr>
+<td>
+<h3>
+Generating a Training and Testing Dataset
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>set.seed(random_number)</code> <br>
+</p>
+</td>
+<td>
+<p>
+<code>library(tidymodels)</code>
+</p>
+</td>
+<td>
+<p>
+<code>&lt;dataset&gt;_split &lt;- initial_split(&lt;dataset&gt;, prop=(proportion_of_data_in_training_set))</code>
+</p>
+</td>
+<td>
+<p>
+<code>&lt;dataset&gt;_train &lt;- training(&lt;dataset&gt;_split)</code>
+</p>
+</td>
+<td>
+<p>
+<code>&lt;dataset&gt;_test &lt;- testing(&lt;dataset&gt;_split)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Splits the data into a training dataset (to train/build the model using
+the lm function) and a testing dataset (to test the model) for model
+validation. We set a seed so that the results are reproducible.
+Additionally, 0.8 is usually a good value for the proportion of data in
+the training set (means that 20% of the data will be in the testing
+set).
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Predicting Outcomes on the Testing Data
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;model_name&gt; %&gt;%</code>
+</p>
+</td>
+<td>
+<p>
+  <code>augment(newdata = &lt;dataset&gt;_test) %&gt;%</code>
+</p>
+</td>
+<td>
+<p>
+   <code>select(&lt;response_variable&gt;, .fitted)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Provides the predicted values for all the data within the testing
+dataset. If we select the &lt;response_variable&gt; column and the
+.fitted column, then it will give the actual response values compared to
+the values that were predicted (we can also get the .resid column to see
+the residuals).
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Evaluating Performance on the Testing Data
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;model_name&gt; %&gt;%</code>
+</p>
+</td>
+<td>
+<p>
+  <code>augment(newdata = &lt;dataset&gt;_test) %&gt;%</code>
+</p>
+</td>
+<td>
+<p>
+  
+<code>rmse(truth = &lt;response_variable&gt;, estimate = .fitted)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Calculates the RMSE (Root Mean Squared Error) for the model on the
+testing dataset. A lower RMSE means the model is better at predicting
+the data, but what defines a lower RMSE depends on the context.
+</p>
+</td>
+</tr>
 </table>
 </div>
 
