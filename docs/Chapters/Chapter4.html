@@ -376,6 +376,22 @@ tr {
 display: flex;
 flex-direction: column
 }
+
+.example-table th {
+background-color: #4B2D83;
+color: white;
+padding: 10px;
+}
+.example-table td {
+padding: 8px;
+border: 1px solid #ddd;
+}
+.example-table tr {
+display: table-row; 
+}
+.example-table tr:nth-child(even) {
+background-color: #f9f9f9;
+}
 }
 </style>
 <div>
@@ -444,6 +460,66 @@ Generates a linear model for the relationship between two
 <tr>
 <td>
 <h3>
+Main Effects Model using R
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;model_name&gt; &lt;- lm(&lt;response_variable&gt; ~ &lt;explanatory_variable&gt; + &lt;categorical_predictor&gt;, data = &lt;dataset&gt;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Generates two equations using the main effects linear model for the
+relationship between <b>a categorical and quantitative predictor</b> and
+a <b>quantitative response variable</b>. The y-intercept varies between
+the two equations, but slope doesn’t.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Interaction Effects Model using R
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;model_name&gt; &lt;- lm(&lt;response_variable&gt; ~ &lt;explanatory_variable&gt; * &lt;categorical_predictor&gt;, data = &lt;dataset&gt;)</code>
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Generates two equations using the interaction effects linear model for
+the relationship between <b>a categorical and quantitative predictor</b>
+and a <b>quantitative response variable</b>. The y-intercept and slope
+varies between the two equations.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
 Tidy View of Linear Model
 </h3>
 </td>
@@ -466,7 +542,268 @@ Usage
 <p>
 This step comes after generating a model with the <code>lm</code>
 function. It can be used to write the equation of the model using the
-estimate column.
+<b>estimate column</b>.
+</p>
+</td>
+<td>
+<h4>
+Solving for a Basic Linear Model Equation
+</h4>
+</td>
+<td>
+<p>
+&lt;response_variable&gt;_hat = (Intercept) +
+(estimate_value_of_explanatory_variable) *
+&lt;explanatory_variable_observation&gt;
+</p>
+</td>
+<td>
+<p>
+<u>For example (explanatory = car_age/response = horsepower):</u><br>
+<table class="example-table">
+<tr>
+<th>
+#
+</th>
+<th>
+term &lt;chr&gt;
+</th>
+<th>
+estimate &lt;dbl&gt;
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+(Intercept)
+</td>
+<td>
+100
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+car_age
+</td>
+<td>
+-2
+</td>
+</tr>
+</table>
+horsepower_hat = 100 + (-2 * car_age) <br><br> Where horsepower_hat is a
+predicted value and car_age is the age of the car that is being observed
+(so that we can predict its horsepower using the model).<b> All of the
+estimate values are just examples.</b>
+</p>
+</td>
+<td>
+<h4>
+Solving for Main Effects Linear Model Equations
+</h4>
+</td>
+<td>
+<p>
+&lt;response_variable&gt;_hat = (Intercept) +
+(estimate_value_of_categorical_predictor) *
+&lt;categorical_predictor&gt;yes +
+(estimate_value_of_explanatory_variable) *
+&lt;explanatory_variable_observation&gt;
+</p>
+</td>
+<td>
+<p>
+<u>For example (explanatory = car_age/response = horsepower/categorical
+predictor = sedan OR suv):</u><br>
+</p>
+<table class="example-table">
+<tr>
+<th>
+#
+</th>
+<th>
+term &lt;chr&gt;
+</th>
+<th>
+estimate &lt;dbl&gt;
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+(Intercept)
+</td>
+<td>
+90
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+car_age
+</td>
+<td>
+-1.5
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+sedanyes
+</td>
+<td>
+20
+</td>
+</tr>
+</table>
+<p>
+horsepower_hat = 90 + (20 * sedanyes) + (-1.5 * car_age) <br><br> <u>If
+the car is a sedan (sedanyes = 1):</u><br> horsepower_hat = 110 - 1.5 *
+car_age<br><br> <u>If the car is an suv (sedanyes = 0):</u><br>
+horsepower_hat = 90 - 1.5 * car_age<br><br> Where horsepower_hat is a
+predicted value and car_age is the age of the car that is being observed
+(so that we can predict its horsepower using the model). sedanyes is a
+binary used to keep track of whether the car is a sedan or not.<b> All
+of the estimate values are just examples.</b>
+</p>
+</td>
+<td>
+<h4>
+Solving for Interaction Effects Linear Model Equations
+</h4>
+</td>
+<td>
+<p>
+&lt;response_variable&gt;_hat = (Intercept) +
+(estimate_value_of_categorical_predictor) *
+&lt;categorical_predictor&gt;yes +
+(estimate_value_of_explanatory_variable) *
+&lt;explanatory_variable_observation&gt;
+</p>
+</td>
+<td>
+<p>
+<u>For example (explanatory = car_age/response = horsepower/categorical
+predictor = sedan OR suv):</u><br>
+</p>
+<table class="example-table">
+<tr>
+<th>
+#
+</th>
+<th>
+term &lt;chr&gt;
+</th>
+<th>
+estimate &lt;dbl&gt;
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+(Intercept)
+</td>
+<td>
+85
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+car_age
+</td>
+<td>
+-1.7
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+sedanyes
+</td>
+<td>
+17
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+car_age:sedanyes
+</td>
+<td>
+0.12
+</td>
+</tr>
+</table>
+<p>
+horsepower_hat = 85 + (17 * sedanyes) + (-1.7 * car_age) + (0.12 *
+car_age * sedanyes) <br><br> <u>If the car is a sedan (sedanyes =
+1):</u><br> horsepower_hat = 102 - 1.58 * car_age<br><br> <u>If the car
+is an suv (sedanyes = 0):</u><br> horsepower_hat = 85 - 1.5 *
+car_age<br><br> Where horsepower_hat is a predicted value and car_age is
+the age of the car that is being observed (so that we can predict its
+horsepower using the model). sedanyes is a binary used to keep track of
+whether the car is a sedan or not. <b>All of the estimate values are
+just examples.</b>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Goodness of Fit Measures
+</h3>
+</td>
+<td>
+<h4>
+Syntax
+</h4>
+</td>
+<td>
+<p>
+<code>glance(&lt;model_name&gt;)</code> Gets all the goodness of fit
+measures
+</p>
+</td>
+<td>
+<p>
+<code>glance(&lt;model_name&gt;) %&gt;% select(r.squared)</code> Gets
+the R squared value of the model to the data
+</p>
+</td>
+<td>
+<p>
+<code>glance(&lt;model_name&gt;) %&gt;% select(adj.r.squared)</code>
+Gets the adjusted R squared value of the model to the data
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Provides the goodness of fit measure that are typically used (how well
+model fits observations).
 </p>
 </td>
 </tr>
