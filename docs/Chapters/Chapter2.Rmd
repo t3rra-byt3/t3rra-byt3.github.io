@@ -35,6 +35,8 @@ output: html_document
 </style>
 
 <div>
+  <a href="https://t3rra-byt3.github.io/" style="font-weight: bold; font-size: 1.8em;">-> Homepage</a>
+
   <table>
     <tr>
     <td> <h3> Learning about data within Dplyr Dataset </h3> </td>

@@ -25,9 +25,12 @@ output: html_document
         color: #555;
         margin-top: 20px;
     }
+    
 </style>
 
 <div>
+
+<a href="https://t3rra-byt3.github.io/" style="font-weight: bold; font-size: 1.8em;">-> Homepage</a>
 
 <h3>Save Document</h3>
 <p class="note">Ctrl + S (Windows) | Command + S (Mac)</p>
@@ -45,7 +48,7 @@ output: html_document
 <p class="note">Ctrl + Alt + I (Windows) | Command + Option + I (Mac)</p>
 
 <h3>Knit Entire Document</h3>
-<p> class="note">Ctrl + Shift + K (Windows) | Command + Shift + K (Mac)</p>
+<p class="note">Ctrl + Shift + K (Windows) | Command + Shift + K (Mac)</p>
 
 <div class="note">
     Basic shortcuts you will use most often. For more shortcuts, check 
