@@ -57,7 +57,7 @@ output: html_document
       <a href="Chapters/RStudioHelp.html">RStudio Help</a>
     </li>
     <li>
-      <a href="Chapters/RmdIntroduction.html">Rmd Introduction</a>
+      <a href="Chapters/RmdIntroduction.html">R/Rmd Introduction</a>
     </li>
     <li>
       <a href="Chapters/RmdShortcuts.html">Keyboard Shortcuts</a>
