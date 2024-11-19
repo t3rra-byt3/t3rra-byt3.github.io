@@ -23,7 +23,7 @@ output: html_document
 
 
   <p> <i> This content is also covered as a part of chapter 2, so feel free to reference
-  that page instead </i> </p>
+  that page instead. </i> </p>
 
   <h3> Help Function </h3>
   <h4>&emsp; Syntax </h4>
