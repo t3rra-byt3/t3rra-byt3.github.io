@@ -48,7 +48,21 @@ output: html_document
     #toc a:hover {
         color: #FF8C00;
     }
+
+    /* Author Subheading Styling */
+    .authors {
+        text-align: left;
+        font-family: 'Arial', sans-serif;
+        font-size: 1em; /* Slightly smaller font size */
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
 </style>
+
+<div class="authors">
+  Authors: Krish Doshi and Dylan Nguyen
+</div>
+
 <div id="toc">
   <h2>Table of Contents</h2>
   <ul>
@@ -73,6 +87,5 @@ output: html_document
     <li>
       <a href="Chapters/Chapter4.html">Chapter 4</a>
     </li>
-
   </ul>
 </div>
