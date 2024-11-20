@@ -11,7 +11,7 @@
 
 
 
-<title>STAT 311 Reference Sheet Chapter 1</title>
+<title>STAT 311 Reference Sheet Chapter 5</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,7 +348,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">STAT 311 Reference Sheet Chapter 1</h1>
+<h1 class="title toc-ignore">STAT 311 Reference Sheet Chapter 5</h1>
 
 </div>
 
@@ -358,64 +358,187 @@ display: none;
 h3 {
 color: orange;
 text-align: center;
+background-color: #4B2D83;
+padding: 10px;
+border-radius: 3px;
+display: inline-block;
 }
 h4 {
-color: #4B2D83;
-font-weight: bold;
-margin-left: 20px;
+color: #000000;
+text-align: center;
+background-color: #a6c8ff;
+padding: 1px;
+border-radius: 3px;
+width: 200px;
+}
+
+tr {
+display: flex;
+flex-direction: column
+}
+
+.example-table th {
+background-color: #4B2D83;
+color: white;
+padding: 10px;
+}
+.example-table td {
+padding: 8px;
+border: 1px solid #ddd;
+}
+.example-table tr {
+display: table-row; 
+}
+.example-table tr:nth-child(even) {
+background-color: #f9f9f9;
+}
 }
 </style>
 <div>
 <p><a href="https://t3rra-byt3.github.io/" style="font-weight: bold; font-size: 1.8em;">-&gt;
 Homepage</a></p>
-<p>
-<i> This content is also covered as a part of chapter 2, so feel free to
-reference that page instead. </i>
-</p>
+<table>
+<tr>
+<td>
 <h3>
-Help Function
+Set Seed Function
 </h3>
+</td>
+<td>
 <h4>
-  Syntax
+Syntax
 </h4>
+</td>
+<td>
 <p>
-   <code>??&lt;object&gt;</code>, where <code>&lt;object&gt;</code> is
-the thing you want to learn more about. Type this in the <b>Console.</b>
+<code>set.seed( ... )</code>
 </p>
+</td>
+<td>
 <h4>
-  Usage
+Usage
 </h4>
+</td>
+<td>
 <p>
-   RStudio will open the <b>Viewer</b> window, displaying information
-related to the <i>object</i> of interest.
+<code>...</code> is any real number as a seed. set.seed allows results
+to be reproducible.
 </p>
-<h4>
-  Output
-</h4>
-<p>
-<p>    A <b>Viewer</b> with information.</p>
+</td>
+</tr>
+<tr>
+<td>
 <h3>
-Glimpse Function
+Bootstrapping
 </h3>
+<td>
+<td>
 <h4>
-  Syntax
+Syntax
 </h4>
+</td>
+<td>
 <p>
-    <code>glimpse( &lt;object&gt; )</code>
+<code>library(tidymodels) # bootstrap package</code> <br> <br>
+<code>&lt;dataframe&gt; %&gt;%</code> <br>
+ <code>specify( &lt;response&gt; ~ &lt;explanatory&gt;) %&gt;%</code>
+<br>
+ <i><b><code>hypothesize(null = &quot;&lt;type)&quot;, p = &lt;pr&gt;)</code></b></i>
+<br>
+ <code>generate(reps = &lt;n&gt;, type = &quot;&lt;resampler&gt;&quot; ) %&gt;%</code>
+<br>  <code>calculate(stat = &quot;&lt;statistic&gt;&quot;)</code>
 </p>
+</td>
+<td>
 <h4>
-  Usage
+Inputs
 </h4>
+</td>
+<td>
 <p>
-    RStudio will output a short excerpt of data. <br>     This data will
-contain row, and column information, along with a few valid rows.
+<p><code>&lt;dataframe&gt;</code> Data frame used for analysis <br>
+<b><code>null = &quot;&lt;type&gt;&quot;</code> Used in hypothesis testing!, most
+common are “point” and “independence”. </b> <br>
+<b><code>p = &lt;pr&gt;</code> Used in hypothesis testing!, if using
+<code>type = &quot;point&quot;</code>, use this to determine the expected
+proportion </b> <br> <code>&lt;response&gt;</code> the y axis variable
+<br> <code>&lt;explanatory&gt;</code> the x axis variable <br>
+<code>reps = &lt;n&gt;</code> the number of simulations to run (numeric)
+<br> <code>type = &lt;resampler&gt;</code> the simulation type. For
+bootstrapping, <code>type = &quot;bootstrap&quot;</code> is used, however, there
+is also other methods such as <code>&quot;permute&quot;</code> and
+<code>&quot;simulate&quot;</code>. <br></p>
+<p><code>stat = &quot;&lt;statistic&gt;&quot;</code> the descriptive, comparitive,
+or inferential statistic to be tested. Descriptive statistics are
+<code>mean, median, sd, prop, count</code>, Comparitive statistics
+include <code>diff in means, diff in medians, diff in props</code>, and
+Inferential statistics include
+<code>Chisq, F, t, z, correlation</code></p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+Calculating Intervals using <code>summarize()</code>
+</h3>
+</td>
+<td>
 <h4>
-  Output
+Syntax
 </h4>
+</td>
+<td>
+<p><code>&lt;dataframe&gt; %&gt;% summarize( lower = quantile(...), upper = quantile(...))</code></p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
 <p>
-    A tibble of data; by default into the console<br>
+This method uses old functions to find the regions in between 2
+quantiles. Generally, either a difference of 90%, 95%, or 99% is used
+between these 2.
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<h3>
+get_p_value() Function
+</h3>
+</td>
+<td <h4> Syntax </h4> </td>
+<td>
+<code>&lt;dataframe&gt; %&gt;% get_p_value(obs_stat = &lt;n&gt;, direction = &quot;&lt;dir&gt;&quot;)</code>
+</td>
+<td>
+<h4>
+Inputs
+</h4>
+</td>
+<td>
+<p>
+<code>&lt;dataframe&gt;</code> is the dataframe used in analysis <br>
+<code>obs_stat = &lt;n&gt;</code> is the observed statistic <br>
+<code>direction = &quot;&lt;dir&gt;&quot;</code> is the direction the of
+alternative hypothesis
+</p>
+</td>
+<td>
+<h4>
+Usage
+</h4>
+</td>
+<td>
+<p>
+Calculates the P value for some statistic
+</p>
+</td>
+</tr>
+</table>
 </div>
 
 

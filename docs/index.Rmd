@@ -3,6 +3,7 @@ title: "STAT 311 Cheatsheet"
 output: html_document
 ---
 
+
 <style>
     /* Center the entire Table of Contents */
     #toc {
@@ -70,22 +71,25 @@ output: html_document
       <a href="Chapters/RStudioHelp.html">RStudio Help</a>
     </li>
     <li>
-      <a href="Chapters/RmdIntroduction.html">Rmd Introduction</a>
+      <a href="Chapters/RmdIntroduction.html">R/Rmd Introduction: Hello R</a>
     </li>
     <li>
       <a href="Chapters/RmdShortcuts.html">Keyboard Shortcuts</a>
     </li>
     <li>
-      <a href="Chapters/Chapter1.html">Chapter 1</a>
+      <a href="Chapters/Chapter1.html">Chapter 1: Data wrangling</a>
     </li>
     <li>
-      <a href="Chapters/Chapter2.html">Chapter 2</a>
+      <a href="Chapters/Chapter2.html">Chapter 2: Data wrangling</a>
     </li>
     <li>
-      <a href="Chapters/Chapter3.html">Chapter 3</a>
+      <a href="Chapters/Chapter3.html">Chapter 3: Visualizing data (ggplot)</a>
     </li>
     <li>
-      <a href="Chapters/Chapter4.html">Chapter 4</a>
+      <a href="Chapters/Chapter4.html">Chapter 4: Fitting linear models (tidymodels)</a>
+    </li>
+    <li>
+      <a href="Chapters/Chapter5.html">Chapter 5: Bootstrapping</a>
     </li>
   </ul>
 </div>

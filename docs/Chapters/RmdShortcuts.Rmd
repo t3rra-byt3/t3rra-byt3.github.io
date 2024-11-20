@@ -25,9 +25,12 @@ output: html_document
         color: #555;
         margin-top: 20px;
     }
+    
 </style>
 
 <div>
+
+<a href="https://t3rra-byt3.github.io/" style="font-weight: bold; font-size: 1.8em;">-> Homepage</a>
 
 <h3>Save Document</h3>
 <p class="note">Ctrl + S (Windows) | Command + S (Mac)</p>

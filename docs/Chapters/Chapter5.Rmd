@@ -1,0 +1,131 @@
+---
+title: "STAT 311 Reference Sheet Chapter 5"
+output: html_document
+---
+
+<style>
+
+    
+        /* Header colors for sections */
+        h3 {
+            color: orange;
+            text-align: center;
+            background-color: #4B2D83;
+            padding: 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        h4 {
+            color: #000000;
+            text-align: center;
+
+            background-color: #a6c8ff;
+            padding: 1px;
+            border-radius: 3px;
+            width: 200px;
+        }
+        
+        /* table rows for each function*/
+        tr {
+            display: flex;
+            flex-direction: column
+        }
+        
+        /* Styling for the specific table */
+    .example-table th {
+        background-color: #4B2D83;
+        color: white;
+        padding: 10px;
+    }
+
+    .example-table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+    
+    .example-table tr {
+        display: table-row; /* Override general display: flex */
+    }
+
+    .example-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+}
+
+</style>
+
+<div>
+  <a href="https://t3rra-byt3.github.io/" style="font-weight: bold; font-size: 1.8em;">-> Homepage</a>
+
+  <table>
+    <tr>
+    <td> <h3>Set Seed Function</h3> </td>
+    <td> <h4> Syntax </h4> </td>
+    <td> <p> ```set.seed( ... )```
+     </p> </td>
+    <td> <h4> Usage </h4> </td> 
+    <td> <p> ```...``` is any real number as a seed. set.seed allows results to be reproducible.</p> </td>
+    </tr>
+    
+    <tr>
+    <td> <h3>Bootstrapping</h3> <td>
+    <td> <h4> Syntax </h4> </td>
+    <td> 
+      <p> ``` library(tidymodels) # bootstrap package``` <br> 
+      <br> ```<dataframe> %>% ```
+      <br> &emsp;```specify( <response> ~ <explanatory>) %>%```
+      <br> &emsp;<i><b>```hypothesize(null = "<type)", p = <pr>)```</b></i>
+      <br> &emsp;```generate(reps = <n>, type = "<resampler>" ) %>%```
+      <br> &emsp;```calculate(stat = "<statistic>")```
+      </p>
+    </td>
+    <td> <h4> Inputs </h4> </td>
+    <td> 
+      <p>
+        ```<dataframe>``` Data frame used for analysis <br>
+        <b>```null = "<type>"``` Used in hypothesis testing!, most common are "point" and "independence". </b> <br>
+        <b>```p = <pr>``` Used in hypothesis testing!, if using ```type = "point"```, use this to determine the expected proportion </b> <br>
+        ```<response>``` the y axis variable <br>
+        ```<explanatory>``` the x axis variable <br>
+        ```reps = <n>``` the number of simulations to run (numeric) <br>
+        ```type = <resampler>``` the simulation type. For bootstrapping, ```type = "bootstrap"``` is used, however, there is also other methods such as ```"permute"``` and ```"simulate"```. <br>
+        
+        ```stat = "<statistic>"``` the descriptive, comparitive, or inferential statistic to be tested. Descriptive statistics are ```mean, median, sd, prop, count```, Comparitive statistics include ```diff in means, diff in medians, diff in props```, and Inferential statistics include ```Chisq, F, t, z, correlation```
+        
+      </p>
+    </td>
+    </tr>
+    
+    <tr>
+      <td> <h3> Calculating Intervals using ```summarize()``` </h3> </td>
+      <td> <h4> Syntax </h4> </td>
+      <td> 
+        ```<dataframe> %>% summarize( lower = quantile(...), upper = quantile(...)) ```
+        
+      </td>
+      <td> <h4> Usage </h4> </td>
+      <td> <p> This method uses old functions to find the regions in between 2 quantiles. Generally, either a difference of 90%, 95%, or 99% is used between these 2. </p> </td>
+    </tr>
+    
+    <tr>
+      <td> <h3> get_p_value() Function </h3> </td>
+      <td <h4> Syntax </h4> </td>
+      <td>
+        ```<dataframe> %>% get_p_value(obs_stat = <n>, direction = "<dir>")```
+      </td>
+      <td> <h4> Inputs </h4> </td>
+      <td> 
+        <p>
+          ```<dataframe>``` is the dataframe used in analysis <br>
+          ```obs_stat = <n>``` is the observed statistic <br>
+          ```direction = "<dir>"``` is the direction the of alternative hypothesis
+        </p>
+      </td>
+      <td> <h4> Usage </h4> </td>
+      <td> <p> Calculates the P value for some statistic </p> </td>
+    </tr>
+    
+    
+  </table>
+</div>
